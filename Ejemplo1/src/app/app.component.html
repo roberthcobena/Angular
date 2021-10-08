@@ -2,7 +2,20 @@
   <h1 class="container bg-dark text-white text-center my-4 py-4">ngif show= {{show}}</h1> 
   <div class="container">
     <button class="btn btn-success" (click)="show=!show">Acción</button>
-    <p class="text-info" *ngIf="show" >texto prueba 1</p>
-    <p class="text-danger">texto prueba 2</p>
+    <p class="text-info" *ngIf="show; else showDos" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae praesentium et error eius. Mollitia quidem harum et dicta cum provident id deleniti non, eos aspernatur modi ex reiciendis, eligendi eaque.</p>
+
+    <ng-template #showDos>
+      <p class="text-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut accusantium, nihil ipsa alias nulla sunt magni vitae similique, nemo dolor placeat accusamus sequi nostrum laboriosam rem non cupiditate ducimus neque.</p>
+    </ng-template>
+  </div>
+
+  <h1 class="container bg-dark text-white text-center my-4 py-4">NgClass</h1> 
+  <div class="container">
+    <button class="btn btn-dark mb-3" (click)="activo='primero'">Primero</button>
+    <button class="btn btn-danger mb-3" (click)="activo='segundo'">Segundo</button>
+
+    <p class="text-info d-none" [ngClass]="{'d-block':activo=='primero'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae praesentium et error eius. Mollitia quidem harum et dicta cum provident id deleniti non, eos aspernatur modi ex reiciendis, eligendi eaque.</p>
+    
+    <p class="text-danger d-none" [ngClass]="{'d-block':activo=='segundo'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut accusantium, nihil ipsa alias nulla sunt magni vitae similique, nemo dolor placeat accusamus sequi nostrum laboriosam rem non cupiditate ducimus neque.</p>
   </div>
 <app-footer></app-footer>
