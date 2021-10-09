@@ -45,4 +45,16 @@
       </tbody>
     </table>
   </div>
+
+  <h1 class="container bg-dark text-white text-center my-4 py-4">Contador</h1> 
+  <div class="container">
+    <button class="btn btn-success mb-3" (click)="sumar()">Sumar +1</button>
+    <label for="espacio">*****************</label>
+    <button class="btn btn-warning mb-3" (click)="restar()">Restar -1</button>
+    <br>
+    <label for="contador">{{n}}</label>
+    <br>
+      <button class="btn btn-info mb-3 d-none" [ngClass]="{'d-block':n==10}">Hola mundo!!</button>
+      <button class="btn btn-danger mb-3 d-none" [ngClass]="{'d-block':n==-10}">Adios :(</button>
+  </div>
 <app-footer></app-footer>
